@@ -39,6 +39,17 @@ const products  =  [
 const express  = require("express");
 const app = express();
 
+const sqlite = require('sqlite3').verbose();
+const path = require("path");
+
+const dbPAth= path.resolve(__dirname,'database/store.sqlite');
+const db = new sqlite.Database(dbPAth,(err)=>{
+    if(err){
+        console.log(err.message)
+    }
+    console.log("App was connected to db...")
+});
+
 
 app.get("/",(req,res)=>{
     res.send("Shoes shop");
@@ -74,6 +85,7 @@ app.get("/products/:id",(req,res)=>{
 app.post("/products",(req,res)=>{
     res.send("POST shop");
 });
+
 app.listen(3000, err=>{
     if(err){
         console.log("Error...");

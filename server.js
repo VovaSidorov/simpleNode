@@ -95,6 +95,21 @@ app.put('/products/:id', (req, res) => {
     });
 });
 
+app.delete('/products/:id', (req, res) => {
+    const {params: {id}} = req;
+
+    const query =`DELETE FROM products WHERE id = ${id}`;
+    db.run(query, (err, data) => {
+        if (err) {
+            console.log('\x1b[31m', err.message);
+        }
+
+        res.json({
+            status: "delete",
+        });
+    });
+});
+
 app.post('/products', (req, res) => {
     console.log(req.body);
 

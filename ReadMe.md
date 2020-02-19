@@ -1,18 +1,18 @@
-###First step install docker & docker-compose
-###Start DB service
+### First step install docker & docker-compose
+### Start DB service
 ```bash
 make start
 ```
 
-###Stop DB service
+### Stop DB service
 ```bash
 make stop
 ```
-###Connect to DB service
+### Connect to DB service
 ```bash
 make connect_db
 ```
-###Set user permission
+### Set user permission
 ```bash
 sudo chmod -R $USER:$USER $PWD
 ```

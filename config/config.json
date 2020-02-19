@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "132465root",
+    "password": "123465root",
     "database": "store",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "132465root",
+    "password": "123465root",
     "database": "store",
     "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "132465root",
+    "password": "123465root",
     "database": "store",
     "host": "localhost",
     "dialect": "mysql"

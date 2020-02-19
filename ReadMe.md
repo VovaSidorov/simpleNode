@@ -16,3 +16,8 @@ make connect_db
 ```bash
 sudo chmod -R $USER:$USER $PWD
 ```
+
+### Watch table info
+```bash
+DESCRIBE table_name;
+```

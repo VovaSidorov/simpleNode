@@ -15,6 +15,7 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - ./docker-conf/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./docker-conf/mysql/:/temp
       - dbdata:/var/lib/mysql/
     networks:
       - node-network

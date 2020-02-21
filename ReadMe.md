@@ -1,4 +1,16 @@
 ### First step install docker & docker-compose
+
+
+### Create ENV with config it's require!!!
+```bash
+touch .env
+next step...
+DOCKER_PREFIX=<project_name>
+DB_DATABASE=<db_name>
+DB_PASSWORD=<db_password>
+```
+
+
 ### Start DB service
 ```bash
 make start

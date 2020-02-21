@@ -1,5 +1,5 @@
 start: #Start DB
-	@sudo docker-compose up -d
+	@sudo docker-compose up -d && npx nodemon server.js
 
 stop: #Stop DB
 	@sudo docker-compose down

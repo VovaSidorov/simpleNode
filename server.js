@@ -4,6 +4,9 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const expressValidator = require('express-validator');
+app.use(expressValidator());
+
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('store', 'root', '123456789root', {
     host: 'localhost',
@@ -30,5 +33,5 @@ app.listen(3000, err => {
     if(err){
         console.log('\x1b[31m', 'Error...');
     }
-    console.log('\x1b[36m%s\x1b[0m', 'App was started... on 3000 port');
+    console.log('App was started... on 3000 port');
 });

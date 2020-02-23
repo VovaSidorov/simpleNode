@@ -1,7 +1,7 @@
 const Product = require('../models').Product;
 //console.log('\x1b[31m', err.message);
 exports.products_list = (req, res) => {
-    Product.findAll()
+    Product.all()
         .then(data => {
             res.json({
                 status: "ok",
@@ -29,6 +29,19 @@ exports.products_show = (req, res) => {
 
 exports.products_new = (req, res) => {
 
+    req.checkBody('price', "Price is required").notEmpty().trim();
+    req.checkBody('title', "Title is required").notEmpty().trim().isLength({ min: 5 }).withMessage('must be at least 5 chars long');
+    req.checkBody('description', "Description is required").notEmpty().trim();
+    req.checkBody('image', "Image is required").notEmpty().trim();
+    req.checkBody('amount', "Amount is required").notEmpty().trim();
+
+    const errors = req.validationErrors();
+
+    if(errors){
+        return res.json({
+            error: errors
+        })
+    }
     Product.create(req.body)
         .then(data => {
             console.log(JSON.stringify(data));
@@ -38,7 +51,7 @@ exports.products_new = (req, res) => {
                     products: data,
                 }
             });
-        })
+        });
 };
 
 exports.products_update = (req, res) => {

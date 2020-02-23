@@ -20,3 +20,6 @@ refresh: # Refresh DB
 
 create_seeder: # Create seeder name=[nameSeeder]
 	@sequelize seed:generate --name $(name)
+
+create_model: # Create model name=[nameModel]
+	@sequelize model:generate --name $(name) --attributes name:string

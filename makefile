@@ -1,3 +1,5 @@
+
+
 start: #Start DB
 	@sudo docker-compose up -d && npx nodemon server.js
 
@@ -18,4 +20,3 @@ refresh: # Refresh DB
 
 create_seeder: # Create seeder name=[nameSeeder]
 	@sequelize seed:generate --name $(name)
-

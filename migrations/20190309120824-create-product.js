@@ -9,9 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       price: {
+        allowNull: false,
         type: Sequelize.FLOAT
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       description: {
@@ -21,12 +23,15 @@ module.exports = {
         type: Sequelize.STRING
       },
       amount: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       views: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       orders: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

@@ -29,6 +29,9 @@ app.get('/', (req, res) => {
 const products = require('./routes/products');
 app.use('/products', products);
 
+const cart = require('./routes/cart');
+app.use('/cart', cart);
+
 app.listen(3000, err => {
     if(err){
         console.log('\x1b[31m', 'Error...');

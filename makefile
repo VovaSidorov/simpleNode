@@ -18,6 +18,11 @@ delete_all: #docker stop $(docker ps -aq)
 refresh: # Refresh DB
 	@sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all
 
+##############################################################################
+
+create_controller: # Create controller name=[nameController]
+	@touch controllers/$(name)Controller.js
+
 create_seeder: # Create seeder name=[nameSeeder]
 	@sequelize seed:generate --name $(name)
 

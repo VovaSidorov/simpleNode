@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     orders: DataTypes.INTEGER,
   }, {});
   Product.associate = function(models) {
-    // associations can be defined here
+    Product.hasMany(models.CartItem);
   };
   return Product;
 };
